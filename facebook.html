@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Motivation - Facebook</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/platform.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💪 Daily Motivation</h1>
+            <p>Powered by Facebook</p>
+            <div class="stats">
+                <span id="quote-count">Quotes: 0</span>
+                <span id="ad-counter">Ads: 0</span>
+                <span id="premium-badge" class="premium-badge hidden">⭐ PREMIUM</span>
+            </div>
+        </header>
+        
+        <div class="quote-card">
+            <p id="quote-text">"The only way to do great work is to love what you do."</p>
+            <p id="quote-author">- Steve Jobs</p>
+            <div id="quote-source">📚 Original Quote</div>
+        </div>
+        
+        <div class="buttons">
+            <button id="new-quote-btn">🔄 Quote Baru</button>
+            <button id="share-btn">📤 Share to FB</button>
+            <button id="save-btn">💾 Simpan</button>
+            <button id="saved-btn">📚 Saved</button>
+            <button id="ai-btn">🤖 AI Quote</button>
+        </div>
+        
+        <div class="features">
+            <h3>🎯 Kategori Quote:</h3>
+            <div class="category-buttons">
+                <button class="category active" data-category="motivation">🔥 Motivasi</button>
+                <button class="category" data-category="success">🚀 Kesuksesan</button>
+                <button class="category" data-category="life">🌿 Kehidupan</button>
+                <button class="category" data-category="indonesia">🇮🇩 Indonesia</button>
+            </div>
+        </div>
+        
+        <!-- Facebook specific features -->
+        <div class="facebook-features">
+            <button id="fb-invite" class="fb-btn">👥 Invite Friends</button>
+            <button id="fb-share" class="fb-btn">📢 Share to Timeline</button>
+        </div>
+        
+        <div id="premium-section">
+            <div class="premium-card">
+                <h3>⭐ Upgrade Premium</h3>
+                <p>Dapatkan pengalaman tanpa iklan dan fitur eksklusif!</p>
+                <button class="premium-btn" id="show-premium-modal">Beli Premium - $0.99</button>
+            </div>
+        </div>
+        
+        <div id="ad-container">
+            <div class="ad-placeholder">
+                <p>📱 Facebook Ads</p>
+                <small>Revenue untuk support developer! 💰</small>
+            </div>
+        </div>
+        
+        <footer>
+            <p>© 2024 Daily Motivation App | <span id="version">v1.0</span></p>
+            <div class="app-info">
+                <span id="total-quotes">Total Quotes: 0</span>
+                <span id="saved-count">Saved: 0</span>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Purchase Modal -->
+    <div id="purchase-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close" id="close-modal">&times;</span>
+            <h3>🎊 Upgrade ke Premium!</h3>
+            <p>Dapatkan pengalaman tanpa iklan dan fitur eksklusif:</p>
+            <div style="margin: 20px 0;">
+                <div style="padding: 15px; border: 2px solid #667eea; border-radius: 10px; text-align: center;">
+                    <h4>💎 Premium Access</h4>
+                    <p style="font-size: 1.4em; color: #667eea; font-weight: bold;">$0.99</p>
+                    <small>One-time payment via Facebook</small>
+                </div>
+            </div>
+            <button id="buy-btn" style="background: #667eea; color: white; padding: 15px; border-radius: 10px; width: 100%; font-weight: bold;">
+                Beli via Facebook
+            </button>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script src="js/facebook.js"></script>
+    
+    <script>
+        // Facebook SDK
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId            : 'your-app-id',
+                autoLogAppEvents : true,
+                xfbml            : true,
+                version          : 'v18.0'
+            });
+        };
+    </script>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+</body>
+</html>
